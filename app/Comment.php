@@ -18,4 +18,46 @@ class Comment extends Model
     {
         return $this->hasOne(User::class);
     }
+
+
+
+    /**Start
+     * Работа с Админкой
+     */
+
+    //разрешить комментарий
+    public function allow()
+    {
+        $this->status = 1;
+        $this->save();
+    }
+
+    //НЕ разрешить комментарий
+    public function disAllow()
+    {
+        $this->status = 0;
+        $this->save();
+    }
+
+    //разрешить запрещать
+    public function toggleStatus()
+    {
+        if($this->status == 0)
+        {
+            return $this->allow();
+        }
+
+        return $this->disAllow();
+    }
+
+    //удалить комментарий
+    public function remove()
+    {
+        $this->delete();
+    }
+
+    /**End
+     * Работа с Админкой
+     */
+
 }
