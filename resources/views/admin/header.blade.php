@@ -9,10 +9,21 @@
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="/assets/admin/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.eot">
+    <link rel="stylesheet" href="/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.html">
+    <link rel="stylesheet" href="/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.svg">
+    <link rel="stylesheet" href="/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.ttf">
+    <link rel="stylesheet" href="/assets/admin/bootstrap/fonts/glyphicons-halflings-regular.woff">
+    <link rel="stylesheet" href="/assets/admin/bootstrap/fonts/glyphicons-halflings-regulard41d.eot">
+
+    <link rel="stylesheet" href="/assets/admin/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="/assets/admin/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/assets/admin/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/assets/admin/dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/admin/dist/css/ionicons.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/assets/admin/dist/css/skins/_all-skins.min.css">

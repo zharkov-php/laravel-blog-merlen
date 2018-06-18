@@ -9,6 +9,8 @@ class Category extends Model
 {
     use Sluggable;
 
+    protected $fillable = ['title'];
+
     //категория может иметь несколько постов
     public function posts()
     {
