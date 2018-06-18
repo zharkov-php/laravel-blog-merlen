@@ -203,18 +203,10 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 2.2.3 -->
-<script src="/assets/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="/assets/admin/bootstrap/js/bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="/assets/admin/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="/assets/admin/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="/assets/admin/dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/assets/admin/dist/js/demo.js"></script>
+
+
+
+<script src="/js/admin.js"></script>
 </body>
 
 <!-- Mirrored from almsaeedstudio.com/themes/AdminLTE/pages/examples/blank.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Dec 2016 15:13:35 GMT -->
