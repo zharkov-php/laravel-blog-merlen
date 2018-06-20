@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
@@ -20,13 +21,13 @@ class Post extends Model
     //у поста может быть только одна категория
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     //у поста может быть только один автор
     public function author()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     //пост имеет множество тегов, но и тег имеет множество постов, (Соединяем МНОГИЕ ко МНОГИМ - belongsToMany)
@@ -67,7 +68,7 @@ class Post extends Model
     {
         $post = new static;
         $post->fill($fields);
-        $post->user_id = Auth::user()->id;
+        //$post->user_id = Auth::user()->id;
         $post->save();
 
         return $post;
@@ -190,4 +191,36 @@ class Post extends Model
     /**End
      * Работа с Админкой
      */
+
+
+
+    public function setDateAttribute($value)
+    {
+        $date = Carbon::createFromFormat('d/m/y', $value)->format('Y-m-d');
+        $this->attributes['date'] = $date;
+    }
+
+    public function getDateAttribute($value)
+    {
+        $date = Carbon::createFromFormat('Y-m-d', $value)->format('d/m/y');
+        return $date;
+    }
+
+    public function getCategoryTitle()
+    {
+        return ($this->category != null)
+            ?   $this->category->title
+            :   'Нет тут категории';
+    }
+
+    public function getTagsTitles()
+    {
+        return (!$this->tags->isEmpty())
+            ?   implode(', ', $this->tags->pluck('title')->all())
+            : 'Нет тут тегов';
+    }
 }
+
+
+
+

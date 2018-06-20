@@ -25,5 +25,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'], function(){
     Route::resource('/tags', 'TagsController');
     //Route::resource('/admin/users', 'Admin\UsersController');
     Route::resource('/users', 'UsersController');
+    //Route::resource('/admin/posts', 'Admin\PostsController');
+    Route::resource('/posts', 'PostsController');
+
 });
 
