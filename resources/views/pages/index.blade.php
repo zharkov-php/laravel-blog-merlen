@@ -7,90 +7,33 @@
       <div class="container">
          <div class="row">
             <div class="col-md-8">
+               @foreach($posts as $post)
                <article class="post">
                   <div class="post-thumb">
                      <a href="blog.html"><img src="assets/home/images/blog-1.jpg" alt=""></a>
                   </div>
                   <div class="post-content">
                      <header class="entry-header text-center text-uppercase">
-                        <h6><a href="#"> Travel</a></h6>
+                        <h6><a href="#"> {{$post->title}}</a></h6>
 
-                        <h1 class="entry-title"><a href="blog.html">Home is peaceful place</a></h1>
+                        <h1 class="entry-title"><a href="blog.html">{{$post->title}}</a></h1>
 
 
                      </header>
                      <div class="entry-content">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                           tevidulabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                           justo duo dolores rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                           ipsum dolor sit am Lorem ipsum dolor sitconsetetur sadipscing elitr, sed diam nonumy
-                           eirmod tempor invidunt ut labore et dolore maliquyam erat, sed diam voluptua.
-                        </p>
+                        <p>{!!$post->description!!}</p>
 
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                           justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                           Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                           diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                           voluptua. At vero eos et accusam.
-                        </p>
-
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                           justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                           Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                           diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                           voluptua. At vero eos et accusam.
-                        </p>
-
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                           justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                           Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                           diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                           voluptua. At vero eos et accusam.
-                        </p>
-
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                           justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                           Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                           diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                           voluptua. At vero eos et accusam.
-                        </p>
-
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                           justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                           Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                           diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                           voluptua. At vero eos et accusam.
-                        </p>
-
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                           justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                           Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                           diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                           voluptua. At vero eos et accusam.
-                        </p>
-
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirtempor
-                           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero accusam et
-                           justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctusest
-                           Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elised
-                           diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sdiam
-                           voluptua. At vero eos et accusam.
-                        </p>
                      </div>
                      <div class="decoration">
-                        <a href="#" class="btn btn-default">Decoration</a>
-                        <a href="#" class="btn btn-default">Decoration</a>
+                        @foreach($post->tags as $tag)
+
+                           <a href="{{route('tag.show', $tag->slug)}}" class="btn btn-default">{{$tag->title}}</a>
+                        @endforeach
                      </div>
 
                      <div class="social-share">
 							<span
-                                    class="social-share-title pull-left text-capitalize">By Rubel On February 12, 2016</span>
+                                    class="social-share-title pull-left text-capitalize">By {{$post->author->name}} On {{$post->getDate()}}</span>
                         <ul class="text-center pull-right">
                            <li><a class="s-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                            <li><a class="s-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -101,6 +44,7 @@
                      </div>
                   </div>
                </article>
+               @endforeach
                <div class="top-comment"><!--top comment-->
                   <img src="assets/home/images/comment.jpg" class="pull-left img-circle" alt="">
                   <h4>Rubel Miah</h4>
@@ -255,6 +199,7 @@
                      <a href="#" class="btn send-btn">Post Comment</a>
                   </form>
                </div><!--end leave comment-->
+                  {{$posts->links()}}
             </div>
             <div class="col-md-4" data-sticky_column>
                <div class="primary-sidebar">
