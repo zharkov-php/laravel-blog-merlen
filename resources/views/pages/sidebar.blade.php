@@ -78,30 +78,12 @@
         <aside class="widget border pos-padding">
             <h3 class="widget-title text-uppercase text-center">Categories</h3>
             <ul>
-                <li>
-                    <a href="#">Food & Drinks</a>
-                    <span class="post-count pull-right"> (2)</span>
-                </li>
-                <li>
-                    <a href="#">Travel</a>
-                    <span class="post-count pull-right"> (2)</span>
-                </li>
-                <li>
-                    <a href="#">Business</a>
-                    <span class="post-count pull-right"> (2)</span>
-                </li>
-                <li>
-                    <a href="#">Story</a>
-                    <span class="post-count pull-right"> (2)</span>
-                </li>
-                <li>
-                    <a href="#">DIY & Tips</a>
-                    <span class="post-count pull-right"> (2)</span>
-                </li>
-                <li>
-                    <a href="#">Lifestyle</a>
-                    <span class="post-count pull-right"> (2)</span>
-                </li>
+                @foreach($categories as $category)
+                    <li>
+                        <a href="{{route('category.show', $category->slug)}}">{{$category->title}}</a>
+                        <span class="post-count pull-right"> ({{$category->posts()->count()}})</span>
+                    </li>
+                @endforeach
             </ul>
         </aside>
         <aside class="widget pos-padding">

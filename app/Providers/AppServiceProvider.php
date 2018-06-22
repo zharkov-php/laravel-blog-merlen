@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('popularPosts', Post::getPopularPosts());
             $view->with('featuredPosts', Post::getFeaturedPosts());
             $view->with('recentPosts', Post::getRecentPosts());
+            $view->with('categories', Category::all());
 
         });
 
