@@ -56,69 +56,24 @@
         <aside class="widget pos-padding">
             <h3 class="widget-title text-uppercase text-center">Recent Posts</h3>
 
-            <div class="thumb-latest-posts">
-
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#" class="popular-img"><img src="assets/home/images/r-p.jpg" alt="">
-
-                            <div class="p-overlay"></div>
-                        </a>
-                    </div>
-                    <div class="p-content">
-                        <a href="#" class="text-uppercase">Home is peaceful Place</a>
-                        <span class="p-date">February 15, 2016</span>
-                    </div>
-                </div>
-            </div>
-            <div class="thumb-latest-posts">
+            @foreach($recentPosts as $post)
+                <div class="thumb-latest-posts">
 
 
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#" class="popular-img"><img src="assets/home/images/r-p.jpg" alt="">
-
-                            <div class="p-overlay"></div>
-                        </a>
-                    </div>
-                    <div class="p-content">
-                        <a href="#" class="text-uppercase">Home is peaceful Place</a>
-                        <span class="p-date">February 15, 2016</span>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="{{route('post.show', $post->slug)}}" class="popular-img"><img src="{{$post->getImage()}}" alt="">
+                                <div class="p-overlay"></div>
+                            </a>
+                        </div>
+                        <div class="p-content">
+                            <a href="{{route('post.show', $post->slug)}}" class="text-uppercase">{{$post->title}}</a>
+                            <span class="p-date">{{$post->getDate()}}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="thumb-latest-posts">
+            @endforeach
 
-
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#" class="popular-img"><img src="assets/home/images/r-p.jpg" alt="">
-
-                            <div class="p-overlay"></div>
-                        </a>
-                    </div>
-                    <div class="p-content">
-                        <a href="#" class="text-uppercase">Home is peaceful Place</a>
-                        <span class="p-date">February 15, 2016</span>
-                    </div>
-                </div>
-            </div>
-            <div class="thumb-latest-posts">
-
-
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#" class="popular-img"><img src="assets/home/images/r-p.jpg" alt="">
-
-                            <div class="p-overlay"></div>
-                        </a>
-                    </div>
-                    <div class="p-content">
-                        <a href="#" class="text-uppercase">Home is peaceful Place</a>
-                        <span class="p-date">February 15, 2016</span>
-                    </div>
-                </div>
-            </div>
         </aside>
         <aside class="widget border pos-padding">
             <h3 class="widget-title text-uppercase text-center">Categories</h3>
