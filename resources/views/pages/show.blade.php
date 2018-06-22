@@ -47,40 +47,51 @@
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy hello ro mod tempor
                             invidunt ut labore et dolore magna aliquyam erat.</p>
                     </div><!--top comment end-->
+
+
+
+                    <!--blog next previous-->
                     <div class="row"><!--blog next previous-->
                         <div class="col-md-6">
-                            <div class="single-blog-box">
-                                <a href="#">
-                                    <img src="/assets/images/blog-next.jpg" alt="">
+                            @if($post->hasPrevious())
+                                <div class="single-blog-box">
+                                    <a href="{{route('post.show', $post->getPrevious()->slug)}}">
+                                        <img src="{{$post->getPrevious()->getImage()}}" alt="">
 
-                                    <div class="overlay">
+                                        <div class="overlay">
 
-                                        <div class="promo-text">
-                                            <p><i class=" pull-left fa fa-angle-left"></i></p>
-                                            <h5>Rubel is doing Cherry theme</h5>
+                                            <div class="promo-text">
+                                                <p><i class=" pull-left fa fa-angle-left"></i></p>
+                                                <h5>{{$post->getPrevious()->title}}</h5>
+                                            </div>
                                         </div>
-                                    </div>
 
 
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                         <div class="col-md-6">
-                            <div class="single-blog-box">
-                                <a href="#">
-                                    <img src="/assets/images/blog-next.jpg" alt="">
+                            @if($post->hasNext())
+                                <div class="single-blog-box">
+                                    <a href="{{route('post.show', $post->getNext()->slug)}}">
+                                        <img src="{{$post->getNext()->getImage()}}" alt="">
 
-                                    <div class="overlay">
-                                        <div class="promo-text">
-                                            <p><i class=" pull-right fa fa-angle-right"></i></p>
-                                            <h5>Rubel is doing Cherry theme</h5>
+                                        <div class="overlay">
+                                            <div class="promo-text">
+                                                <p><i class=" pull-right fa fa-angle-right"></i></p>
+                                                <h5>{{$post->getNext()->title}}</h5>
 
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     </div><!--blog next previous end-->
+                    <!--blog next previous end-->
+
+
                     <div class="related-post-carousel"><!--related post carousel-->
                         <div class="related-heading">
                             <h4>You might also like</h4>

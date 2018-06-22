@@ -232,7 +232,27 @@ class Post extends Model
 
 
 
+    public function hasPrevious()
+    {
+        return self::where('id', '<', $this->id)->max('id');
+    }
 
+    public function getPrevious()
+    {
+        $postID = $this->hasPrevious(); //ID
+        return self::find($postID);
+    }
+
+    public function hasNext()
+    {
+        return self::where('id', '>', $this->id)->min('id');
+    }
+
+    public function getNext()
+    {
+        $postID = $this->hasNext();
+        return self::find($postID);
+    }
 
 
 
