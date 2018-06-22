@@ -403,6 +403,7 @@
                     </div>
                 </div>
             </div>
+                @include('pages.sidebar')
         </div>
     </div>
     <!-- end main content-->
