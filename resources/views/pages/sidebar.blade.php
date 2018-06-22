@@ -37,39 +37,20 @@
             <h3 class="widget-title text-uppercase text-center">Featured Posts</h3>
 
             <div id="widget-feature" class="owl-carousel">
-                <div class="item">
-                    <div class="feature-content">
-                        <img src="assets/home/images/p1.jpg" alt="">
+                @foreach($featuredPosts as $post)
+                    <div class="item">
+                        <div class="feature-content">
+                            <img src="{{$post->getImage()}}" alt="">
 
-                        <a href="#" class="overlay-text text-center">
-                            <h5 class="text-uppercase">Home is peaceful</h5>
+                            <a href="#" class="overlay-text text-center">
+                                <h5 class="text-uppercase">{{$post->title}}</h5>
 
-                            <p>Lorem ipsum dolor sit ametsetetur sadipscing elitr, sed </p>
-                        </a>
+                                <p>{!!$post->description!!}</p>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="feature-content">
-                        <img src="assets/home/images/p2.jpg" alt="">
+                @endforeach
 
-                        <a href="#" class="overlay-text text-center">
-                            <h5 class="text-uppercase">Home is peaceful</h5>
-
-                            <p>Lorem ipsum dolor sit ametsetetur sadipscing elitr, sed </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="feature-content">
-                        <img src="assets/home/images/p3.jpg" alt="">
-
-                        <a href="#" class="overlay-text text-center">
-                            <h5 class="text-uppercase">Home is peaceful</h5>
-
-                            <p>Lorem ipsum dolor sit ametsetetur sadipscing elitr, sed </p>
-                        </a>
-                    </div>
-                </div>
             </div>
         </aside>
         <aside class="widget pos-padding">

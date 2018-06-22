@@ -18,9 +18,11 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('pages.sidebar', function($view){
 
             $view->with('popularPosts', Post::getPopularPosts());
+            $view->with('featuredPosts', Post::getFeaturedPosts());
 
 
-            });
+
+        });
 
     }
 
