@@ -254,6 +254,10 @@ class Post extends Model
         return self::find($postID);
     }
 
+    public function related()
+    {
+        return self::all()->except($this->id);
+    }
 
 
 }
