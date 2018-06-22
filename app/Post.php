@@ -229,6 +229,13 @@ class Post extends Model
     {
         return $this->category != null ? $this->category->id : null;
     }
+
+
+
+
+
+
+
 }
 
 

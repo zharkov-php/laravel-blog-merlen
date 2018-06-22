@@ -10,13 +10,13 @@
                @foreach($posts as $post)
                <article class="post">
                   <div class="post-thumb">
-                     <a href="blog.html"><img src="assets/home/images/blog-1.jpg" alt=""></a>
+                     <a href="{{route('post.show', $post->slug)}}"><img src="/assets/home/images/blog-1.jpg" alt=""></a>
                   </div>
                   <div class="post-content">
                      <header class="entry-header text-center text-uppercase">
-                        <h6><a href="#"> {{$post->title}}</a></h6>
+                        <h6><a href="{{route('post.show', $post->slug)}}"> {{$post->title}}</a></h6>
 
-                        <h1 class="entry-title"><a href="blog.html">{{$post->title}}</a></h1>
+                        <h1 class="entry-title"><a href="{{route('post.show', $post->slug)}}">{{$post->title}}</a></h1>
 
 
                      </header>
@@ -46,7 +46,7 @@
                </article>
                @endforeach
                <div class="top-comment"><!--top comment-->
-                  <img src="assets/home/images/comment.jpg" class="pull-left img-circle" alt="">
+                  <img src="/assets/home/images/comment.jpg" class="pull-left img-circle" alt="">
                   <h4>Rubel Miah</h4>
 
                   <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy hello ro mod tempor
@@ -56,7 +56,7 @@
                   <div class="col-md-6">
                      <div class="single-blog-box">
                         <a href="#">
-                           <img src="assets/home/images/blog-next.jpg" alt="">
+                           <img src="/assets/home/images/blog-next.jpg" alt="">
 
                            <div class="overlay">
 
@@ -73,7 +73,7 @@
                   <div class="col-md-6">
                      <div class="single-blog-box">
                         <a href="#">
-                           <img src="assets/home/images/blog-next.jpg" alt="">
+                           <img src="/assets/home/images/blog-next.jpg" alt="">
 
                            <div class="overlay">
                               <div class="promo-text">
@@ -93,7 +93,7 @@
                   <div class="items">
                      <div class="single-item">
                         <a href="#">
-                           <img src="assets/home/images/related-post-1.jpg" alt="">
+                           <img src="/assets/home/images/related-post-1.jpg" alt="">
 
                            <p>Just Wondering at Beach</p>
                         </a>
@@ -102,7 +102,7 @@
 
                      <div class="single-item">
                         <a href="#">
-                           <img src="assets/home/images/related-post-2.jpg" alt="">
+                           <img src="/assets/home/images/related-post-2.jpg" alt="">
 
                            <p>Just Wondering at Beach</p>
                         </a>

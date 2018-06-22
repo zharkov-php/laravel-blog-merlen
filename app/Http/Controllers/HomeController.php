@@ -13,4 +13,10 @@ class HomeController extends Controller
 
         return view('pages.index')->with('posts', $posts);
     }
+
+    public function show($slug )
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+        return view('pages.show', compact('post'));
+    }
 }
