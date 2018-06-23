@@ -16,6 +16,8 @@ Route::get('/post/{slug}', 'HomeController@show')->name('post.show');
 Route::get('/category/{slug}', 'HomeController@category')->name('category.show');
 Route::get('/tag/{slug}', 'HomeController@tag')->name('tag.show');
 
+Route::get('/register', 'AuthController@registerForm');
+Route::post('/register', 'AuthController@register');
 
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin'], function(){
@@ -29,6 +31,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'], function(){
     Route::resource('/users', 'UsersController');
     //Route::resource('/admin/posts', 'Admin\PostsController');
     Route::resource('/posts', 'PostsController');
+
+
+
+
 
 });
 
