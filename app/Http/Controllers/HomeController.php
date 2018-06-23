@@ -6,14 +6,16 @@ use App\Category;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $user = Auth::user();
         $posts = Post::paginate(2);
 
-        return view('pages.index')->with('posts', $posts);
+        return view('pages.index', compact('user'))->with('posts', $posts);
     }
 
     public function show($slug )
