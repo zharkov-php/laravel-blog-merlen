@@ -10,13 +10,13 @@ class Comment extends Model
     //у комментария может быть только один пост
     public function post()
     {
-        return $this->hasOne(Post::class);
+        return $this->belongsTo(Post::class);
     }
 
     //у комментария может быть только один автор
     public function author()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 

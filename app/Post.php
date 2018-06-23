@@ -40,6 +40,10 @@ class Post extends Model
             'tag_id'
             );
     }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
 
     /**
@@ -277,6 +281,11 @@ class Post extends Model
     public static function getRecentPosts()
     {
         return self::orderBy('created_at', 'desc')->take(3)->get();
+    }
+
+    public function getComments()
+    {
+        return $this->comments()->where('status', 1)->get();
     }
 }
 
