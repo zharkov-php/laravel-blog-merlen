@@ -13,8 +13,9 @@
 
     <!-- Main content -->
     <section class="content">
-      <form class="form-horizontal" method="post" accept-charset="UTF-8" enctype="multipart/form-data" action="{{action('Admin\PostsController@update', $post->id)}}" >
-      {{ csrf_field() }}
+        <form class="form-horizontal" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" action="{{ route('posts.update', $post->id) }}">
+        @csrf
+      {{ method_field('PUT') }}
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">

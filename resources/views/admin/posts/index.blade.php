@@ -50,12 +50,15 @@
                     <img src="{{$post->getImage()}}" alt="" width="100">
                   </td>
                   <td>
-                  <a href="{{route('posts.edit', $post->id)}}" class="fa fa-pencil"></a> 
+                  <a href="{{route('posts.edit', $post->id)}}" class="fa fa-pencil"></a>
 
+                    <form class="form-horizontal" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" action="{{ route('posts.destroy', $post->id) }}">
+                      {{ csrf_field() }}
+                      {{ method_field('DELETE') }}
 	                  <button onclick="return confirm('are you sure?')" type="submit" class="delete">
 	                   <i class="fa fa-remove"></i>
 	                  </button>
-
+                    </form>
                   </td>
                 </tr>
                 @endforeach
